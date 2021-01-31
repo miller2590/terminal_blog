@@ -1,11 +1,4 @@
-import pymongo
+from database import Database
 
-uri = 'mongodb://127.0.0.1:27017'
-client = pymongo.MongoClient(uri)
-database = client['fullstack']
-collection = database['students']
+Database.initialize()
 
-students = collection.find({})
-
-for student in students:
-    print(student)
